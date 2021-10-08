@@ -1,5 +1,6 @@
 # pk-drugslab
  
+- ESX/QBCore (QBCore is still a W.I.P not fully developt working on it still)
 - Drugsrun start in Lab
 - Lab can be upgraded or downgraded
 - Lab pincode change
