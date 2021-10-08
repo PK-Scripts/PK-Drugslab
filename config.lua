@@ -59,7 +59,7 @@ Config.UseMenu = "br-menu"
 Config.ZOffset = 1000
 
 -- Webhook --
-Config.WebHook = "https://discord.com/api/webhooks/872867340654628915/RtQc6LQz71QoVV1j2OOFkV51bwgLr7zxe7tkLZvPlP973JDV5aRyiypXn312OSfovsfo"
+Config.WebHook = ""
 
 -- Police stuff --
 Config.PoliceBreakTime = 10 -- Dit is in secondes
