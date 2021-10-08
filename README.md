@@ -17,3 +17,7 @@ Requirements:
 - Shells (https://k4mb1.tebex.io/package/4672285 you can change the sells by your self if you want a other shell)
 
 Vid: https://www.youtube.com/watch?v=GpuzKgMx0ac 
+
+
+Credits:
+https://github.com/qbcore-framework/qb-traphouse for the html for pincode
