@@ -210,13 +210,27 @@ AddEventHandler('pk-drugslab:starteddrugsrun', function(xPlayer1)
 	refreshlabsclient(1)
 end)
 
-ESX.RegisterCommand('lab-create', "admin", function(xPlayer, args, showError)
-	xPlayer.triggerEvent('pk-drugslab:createlab', xPlayer)
-end, true)
-
-ESX.RegisterCommand('lab-remove', "admin", function(xPlayer, args, showError)
-	xPlayer.triggerEvent('pk-drugslab:removelab', xPlayer)
-end, true)
+if ESX.RegisterCommand == nil then
+	TriggerEvent('es:addGroupCommand', 'lab-create', 'admin', function(source, args, user)
+		TriggerClientEvent('pk-drugslab:createlab',, source)
+	end, function(source, args, user)
+		TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
+	end, {help = "Maak een lab aan"})
+	
+	TriggerEvent('es:addGroupCommand', 'lab-remove', 'admin', function(source, args, user)
+		TriggerClientEvent('pk-drugslab:removelab', source)
+	end, function(source, args, user)
+		TriggerClientEvent('chat:addMessage', source, { args = { '^1SYSTEM', 'Insufficient Permissions.' } })
+	end, {help = "Maak een lab aan"})
+else
+	ESX.RegisterCommand('lab-create', "admin", function(xPlayer, args, showError)
+		xPlayer.triggerEvent('pk-drugslab:createlab', xPlayer)
+	end, true)
+	
+	ESX.RegisterCommand('lab-remove', "admin", function(xPlayer, args, showError)
+		xPlayer.triggerEvent('pk-drugslab:removelab', xPlayer)
+	end, true)
+end
 
 function refreshlabsclient(something)
 	Wait(20)
